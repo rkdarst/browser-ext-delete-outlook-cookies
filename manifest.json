@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Office.com Cookie Cleaner (Manual)",
+  "version": "1.0",
+  "description": "Click the button to delete all cookies from office.com in every container.",
+  "permissions": [
+    "cookies"
+  ],
+  "host_permissions": [
+      "*://*.office.com/*"
+  ],
+  "background": {
+      "scripts": ["background.js"]
+  },
+  "action": {
+    "default_icon": "icon.ico",
+    "default_title": "Delete office.com cookies"
+  }
+}
