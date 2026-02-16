@@ -1,0 +1,56 @@
+name: sphinx
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build zipfile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      # https://github.com/marketplace/actions/checkout
+      - uses: actions/checkout@v4
+
+      - run: |
+          mkdir _gh-pages/
+          touch _gh-pages/.nojekyll
+
+      - run: |
+          bash make-archive.sh
+          mv browser-ext-delete-outlook-cookies.xpi _gh-pages/
+
+      # Save artifact for the next step.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gh-pages-build
+          path: _gh-pages/
+
+  # Deploy in a separate job so that write permissions are restricted
+  # to the minimum steps.
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: gh-pages-build
+          path: _gh-pages/
+
+      # Deploy
+      # https://github.com/peaceiris/actions-gh-pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _gh-pages/
+          force_orphan: true
