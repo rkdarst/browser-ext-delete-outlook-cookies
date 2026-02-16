@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Office.com Cookie Cleaner (Manual)",
+  "name": "Office.com cookie deleter",
   "version": "1.0",
-    "description": "Adds a clickable button which will delete all office.com cookies, in every container.  This can solve login loops with Outlook and other office.com web services.",
+    "description": "Click the button to delete all cookies from office.com in every container.  This can be used to stop Outlook login loops, which must otherwise be solved by deleting the cookies manually.  No data is sent anywhere and no other actions happen.  This was quickly coded and not intended for public distribution yet, but it should work for anyone.",
   "permissions": [
     "cookies"
   ],
