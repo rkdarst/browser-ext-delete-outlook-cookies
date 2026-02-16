@@ -17,18 +17,17 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: |
-          mkdir _gh-pages/
-          touch _gh-pages/.nojekyll
+          mkdir build/
+          touch build/.nojekyll
 
       - run: |
           bash make-archive.sh
-          mv browser-ext-delete-outlook-cookies.xpi _gh-pages/
 
       # Save artifact for the next step.
       - uses: actions/upload-artifact@v4
         with:
           name: gh-pages-build
-          path: _gh-pages/
+          path: build/
 
   # Deploy in a separate job so that write permissions are restricted
   # to the minimum steps.
