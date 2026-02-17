@@ -20,7 +20,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "@browser-ext-delete-outlook-cookies",
-      "update_url": "https://rkdarst.github.io/browser-ext-delete-outlook-cookies/firefox-update-manifest.json"
+      "update_url": "https://rkdarst.github.io/browser-ext-delete-outlook-cookies/firefox-update-manifest.json",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }
