@@ -17,6 +17,9 @@
     "default_icon": "icon.ico",
     "default_title": "Delete office.com and microsoftonline.com cookies"
   },
+  "icons": {
+      "32": "icon.ico"
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "@browser-ext-delete-outlook-cookies",
