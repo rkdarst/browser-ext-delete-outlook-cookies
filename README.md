@@ -9,13 +9,20 @@ this.  But it's so simple, it probably doesn't do anything wrong.
 
 ### Firefox
 
-Go to <about:debugging#/runtime/this-firefox>, Select `Load temporary
-add-on`, and select the `manifest.json` from this repository.
+**Release:** Go to
+<https://rkdarst.github.io/browser-ext-delete-outlook-cookies/> and
+click on the latest version (that has a version number).
+
+Development: Go to <about:debugging#/runtime/this-firefox>, Select
+`Load temporary add-on`, and select the `manifest.json` from this
+repository.
+
 
 ### Chrome
 
-Change `"scripts": ["background.js"]` to `"service_worker":
-"background.js"` (todo: can both be in there and it works across
+Not yet tested.  You might be able to change `"scripts":
+["background.js"]` to `"service_worker": "background.js"`.  I don't
+know how to load it. (todo: can both be in there and it works across
 both?)
 
 
@@ -23,8 +30,6 @@ both?)
 
 It works for me but isn't well tested.
 
-- If anyone wants to help prepare it for release, that help would be
-  welcome.
 - Make it work with Chrome also: can it be the same source code or do
   we need a compiling step or separate one?
   - Then change the repo name to not say "Firefox" ?
