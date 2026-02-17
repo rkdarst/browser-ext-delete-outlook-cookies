@@ -19,6 +19,7 @@ popd               # change back to old directory
 
 
 rm -f build/index.html
-for file in $( ls build/*.xpi ); do
+echo "The files with a version number have been approved.<br>" >> build/index.html
+for file in $( cd build; ls *.xpi ); do
     echo "<a href=\"$file\">$file</a><br>" >> build/index.html
 done
