@@ -5,15 +5,18 @@ async function deleteOfficeCookies() {
     // We have to search all cookie stores, because office may be logged
     // in a container other than default.
     const stores = await browser.cookies.getAllCookieStores();
-    console.log(stores);
     for (let store of stores) {
+      console.log("  Cookie store: ", store);
       //console.log("store:", store.id)
       // This function will only return cookies for which we have host
       // permission.  Anyway, we limit it to the target domain here.
       for (let targetDomain of targetDomains) {
-          let cookies = await browser.cookies.getAll({ domain: targetDomain, storeId: store.id, firstPartyDomain: null, partitionKey: {} });
+        console.log(  "    targetDomain: ", targetDomain);
+        let cookies = await browser.cookies.getAll({ domain: targetDomain, storeId: store.id, firstPartyDomain: null });
+        console.log("    ", cookies);
         for (let cookie of cookies) {
           // Construct the URL from cookie info
+          console.log("      Cookie: ", cookie);
           let url =
             (cookie.secure ? "https://" : "http://") +
             cookie.domain.replace(/^\./, "") +
@@ -24,7 +27,7 @@ async function deleteOfficeCookies() {
             name: cookie.name,
             storeId: cookie.storeId
           });
-          console.log(`Deleted cookie: ${cookie.name}`);
+          console.log(`      Deleted cookie: ${cookie.name}`);
         }
       }
     }
