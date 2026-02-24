@@ -1,4 +1,4 @@
-const targetDomains = ["office.com", "microsoftonline.com"];
+const targetDomains = ["office.com"];
 
 async function deleteOfficeCookies() {
   try {
