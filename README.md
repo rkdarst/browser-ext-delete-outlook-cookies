@@ -1,8 +1,10 @@
-# office.com cookie eliminator
+# Outlook cookie eliminator
 
-This extension deletes all the office.com extensions to solve outlook
+This extension deletes all Outlook (office.com and
+outlook.cloud.microsoft currently) cookies to solve outlook
 login loops.  I don't know how to make extensions, so don't trust
-this.  But it's so simple, it probably doesn't do anything wrong.
+this.  But it's so simple, it probably doesn't do anything wrong and
+might work for you.
 
 
 ## Installation
@@ -11,7 +13,8 @@ this.  But it's so simple, it probably doesn't do anything wrong.
 
 **Release:** Go to
 <https://rkdarst.github.io/browser-ext-delete-outlook-cookies/> and
-click on the latest version (that has a version number).
+click on the latest version (that has a version number) for a signed
+version.
 
 Development: Go to <about:debugging#/runtime/this-firefox>, Select
 `Load temporary add-on`, and select the `manifest.json` from this
@@ -33,8 +36,11 @@ It works for me but isn't well tested.
 - Make it work with Chrome also: can it be the same source code or do
   we need a compiling step or separate one?
   - Then change the repo name to not say "Firefox" ?
-- Making it installable on normal Firefox needs the extension to be
-  signed, which requires an account and approval.
+- ~~Making it installable on normal Firefox needs the extension to be
+  signed, which requires an account and approval.~~ Done (but not
+  automated or always up to date)
+- Make the cookie deleting more precise (but someone needs to figure
+  out what cookies need to go)
 
 
 ## License

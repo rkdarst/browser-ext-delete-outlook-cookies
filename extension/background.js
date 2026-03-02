@@ -1,18 +1,17 @@
-const targetDomains = ["office.com"];
+const targetDomains = ["office.com", "outlook.cloud.microsoft"];
 
 async function deleteOfficeCookies() {
   try {
     // We have to search all cookie stores, because office may be logged
     // in a container other than default.
     const stores = await browser.cookies.getAllCookieStores();
-    for (let store of stores) {
-      console.log(`  Cookie store: ${store.id}`);
-      console.debug(" ", store)
-      //console.log("store:", store.id)
-      // This function will only return cookies for which we have host
-      // permission.  Anyway, we limit it to the target domain here.
-      for (let targetDomain of targetDomains) {
-        console.log(  "    targetDomain: ", targetDomain);
+    for (let targetDomain of targetDomains) {
+      console.log(  "  targetDomain: ", targetDomain);
+      for (let store of stores) {
+        console.log(`    Cookie store: ${store.id}`);
+        console.debug("    ", store)
+        // This function will only return cookies for which we have host
+        // permission.  Anyway, we limit it to the target domain here.
         let cookies = await browser.cookies.getAll({ domain: targetDomain, storeId: store.id, firstPartyDomain: null });
         console.debug("    ", cookies);
         for (let cookie of cookies) {
