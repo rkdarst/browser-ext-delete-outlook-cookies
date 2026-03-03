@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Outlook cookie deleter",
-  "version": "0.1.1",
+  "version": "0.1.2",
     "description": "Click the button to delete all cookies from Outlook (currently office.com and outlook.cloud.microsoft) in every container.  This can be used to stop Outlook login loops, which must otherwise be solved by deleting the cookies manually.  Other sites may be added as needed to make logins work.  No data is sent anywhere and no other actions happen.  This was quickly coded and not intended for public distribution yet, but it should work for anyone.",
   "permissions": [
     "cookies"

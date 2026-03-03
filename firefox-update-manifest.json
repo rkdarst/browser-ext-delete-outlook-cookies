@@ -5,6 +5,10 @@
         {
           "version": "0.1",
           "update_link": "https://rkdarst.github.io/browser-ext-delete-outlook-cookies/firefox-ext-delete-outlook-cookies.xpi"
+        },
+        {
+          "version": "0.1.2",
+          "update_link": "https://rkdarst.github.io/browser-ext-delete-outlook-cookies/firefox-ext-delete-outlook-cookies-0.1.2.xpi"
         }
       ]
     }
