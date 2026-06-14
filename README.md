@@ -14,7 +14,8 @@ might work for you.
 **Release:** Go to
 <https://rkdarst.github.io/browser-ext-delete-outlook-cookies/> and
 click on the latest version (that has a version number) for a signed
-version.
+version.  If it doesn't work, go to the settings and make sure that
+permissions on the relevant sites are enabled.
 
 Development: Go to <about:debugging#/runtime/this-firefox>, Select
 `Load temporary add-on`, and select the `manifest.json` from this
